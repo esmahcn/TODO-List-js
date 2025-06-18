@@ -43,9 +43,9 @@ addBtn.addEventListener('click', () => {
             right.classList.toggle('crossed');
         });
 
-        const left = document.creatgit eElement('span');
-        left.className = 'left delete-icon';
-        left.textContent = 'x';
+        const left = document.createElement('span');
+        left.className = 'left';
+        left.innerHTML = '<i class="fas fa-trash"></i>';
 
         left.addEventListener('click', () => {
             output.removeChild(container);

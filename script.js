@@ -44,7 +44,7 @@ addBtn.addEventListener('click', () => {
     });
 
     const left = document.createElement('span');
-    left.className = 'left';
+    left.className = 'left delete-icon';
     left.textContent = 'x';
 
     left.addEventListener('click', () => {

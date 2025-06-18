@@ -1,108 +1,201 @@
-  body {
-    padding: 20px;
-    margin: 0px;
-    color: #000;
-    background-color: #fff;
-    font-family: Times, serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s, color 0.3s;
-  }
+/* Base layout */
+body {
+  padding: 20px;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: rgb(210, 199, 211);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-  .big-container {
-    padding: 10px;
-  }
+.big-container {
+  border: 1px solid #000;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 500px;
+  background-color: palevioletred;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
 
-  .input-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 400px;
-    margin: 20px auto;
-  }
+/* Header section */
+.h-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .input-row input {
-    flex: 1;
-    padding: 8px;
-    font-size: 16px;
-  }
+.h-container h1 {
+  text-decoration: wavy;
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
 
-  button {
-    margin: 20px;
-  }
+.h-container h3 {
+  font-size: 18px;
+  margin: 5px;
+  color: #fff;
+}
 
-  .input-row button {
-    margin: 50px;
-    padding: 8px 16px;
-    font-size: 16px;
-    background-color: #0d6efd;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-  }
+/* Input row */
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
 
-  .input-row button:hover {
-    background-color: #0b5ed7;
-  }
+.input-row input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-  .big-container {
-    border: solid #000;
-    height: 500px;
-    width: 500px;
-  }
+.input-row button {
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #727070;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 
-  .line-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    /* the line */
-    padding-bottom: 4px;
-    width: 400px;
-  }
+}
+
+.input-row button:hover {
+  background-color: #414142;
+}
+
+/* Task list */
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.right {
+  flex: 1;
+  cursor: pointer;
+}
+
+.left {
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .big-container {
+  background-color: #1e1e1e;
+  border-color: #444;
+}
+
+body.dark-mode input,
+body.dark-mode .input-row button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .input-row button:hover {
+  background-color: #e81aa3;
+}
+
+/* Dark mode task items */
+body.dark-mode .line-container {
+  border-bottom: 1px solid #444;
+}
+
+p {
+
+  font-size: 18px;
+  margin: 5px;
+  color: #fff;
+
+}
 
 
-  /* Light mode (default) */
-  body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-  }
+/* Theme toggle button */
+.btn {
+  text-align: center;
+  margin-top: 20px;
+}
 
-  /* Dark mode */
-  body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-  }
+.btn #darkModeBtn {
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  background-color: rgb(56, 53, 53);
+  color: #fff;
+  border: 1px solid #555;
+}
 
-  .btn {
-    text-align: center;
-    margin-top: 20px;
-  }
+/* Strike-through for completed tasks */
+.crossed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
 
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0d6efd;
-    color: white;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #0b5ed7;
-  }
-
-  /* 👇 This is the strike-through style */
-  .crossed {
-    text-decoration: line-through;
-    opacity: 0.6;
-  }
-  #noItemsMessage {
-text-align: start;
-  color: gray;
+/* No items message */
+#noItemsMessage {
+  text-align: start;
+  color: #fff;
   font-style: italic;
+  margin-top: 20px;
+  display: none;
+}
+
+.delete-icon {
+  color: transparent;
+  /* hide the text "x" */
+  cursor: pointer;
+  position: relative;
+}
+
+.delete-icon::before {
+  content: "🗑️";
+  /* Unicode or emoji */
+  font-size: 16px;
+  color: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.add-btn {
+  position: relative;
+  height: 50px;
+  width: 60px;
+  padding-left: 100px;
+  /* space for the icon */
+}
+
+.add-btn::before {
+  content: "➕";
+  /* plus emoji or use "+" */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+  /* so clicking the icon triggers button */
 }

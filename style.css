@@ -1,0 +1,108 @@
+  body {
+    padding: 20px;
+    margin: 0px;
+    color: #000;
+    background-color: #fff;
+    font-family: Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .big-container {
+    padding: 10px;
+  }
+
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+
+  .input-row input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  button {
+    margin: 20px;
+  }
+
+  .input-row button {
+    margin: 50px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .input-row button:hover {
+    background-color: #0b5ed7;
+  }
+
+  .big-container {
+    border: solid #000;
+    height: 500px;
+    width: 500px;
+  }
+
+  .line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    /* the line */
+    padding-bottom: 4px;
+    width: 400px;
+  }
+
+
+  /* Light mode (default) */
+  body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  /* Dark mode */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0b5ed7;
+  }
+
+  /* 👇 This is the strike-through style */
+  .crossed {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  #noItemsMessage {
+text-align: start;
+  color: gray;
+  font-style: italic;
+}
